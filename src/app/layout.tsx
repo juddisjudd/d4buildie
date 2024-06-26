@@ -33,7 +33,7 @@ export default function RootLayout({
             </TooltipProvider>
           </ThemeProvider>
         </Provider>
-        <Toaster expand={true} position="bottom-right" />
+        <Toaster richColors expand={true} position="bottom-right" />
       </body>
     </html>
   );

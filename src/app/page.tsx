@@ -9,8 +9,7 @@ import Link from 'next/link';
 
 export default function Home() {
   const handleImportLoadClick = () => {
-    console.log('Button clicked');
-    toast('Feature not implemented yet.');
+    toast.error('Feature not implemented yet.');
   };
 
   return (
