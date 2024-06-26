@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
     <footer className="bg-neutral-900 text-white py-4">
       <div className="container mx-auto text-center">
         <p className="text-sm">
-          Copyright &copy; {new Date().getFullYear()} juddisjudd
+          Copyright &copy; {new Date().getFullYear()} D4Buildie
         </p>
         <p className="text-sm">
           D4Buildie is an open-source project licensed under the{" "}
