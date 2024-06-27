@@ -6,7 +6,6 @@ A <strong>Diablo IV</strong> Class "Builder" Desktop Application.<br>
 <br><a href="#"><img src="https://img.shields.io/badge/STATUS-WORK--IN--PROGRESS-red" alt="STATUS - WORK-IN-PROGRESS"></a><br><br>
 <img src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white"></img>
 <img src="https://img.shields.io/badge/shadcn/ui-000000.svg?style=for-the-badge&logo=shadcn/ui&logoColor=white"></img>
-<img src="https://img.shields.io/badge/Prisma-2D3748.svg?style=for-the-badge&logo=Prisma&logoColor=white"><img>
 <img src="https://img.shields.io/badge/Tauri-24C8D8.svg?style=for-the-badge&logo=Tauri&logoColor=white"></img>
 </p>
 <hr>
