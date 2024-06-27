@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, "bg-background")}>
+      <body className={cn(inter.className, "bg-background flex flex-col h-full")}>
         <Provider>
           <ThemeProvider
             attribute="class"
@@ -28,7 +28,7 @@ export default function RootLayout({
           >
             <TooltipProvider disableHoverableContent delayDuration={0}>
               <Header />
-              {children}
+              <main className="flex-grow pt-20">{children}</main>
               <Footer />
             </TooltipProvider>
           </ThemeProvider>

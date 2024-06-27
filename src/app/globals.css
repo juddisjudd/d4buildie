@@ -85,3 +85,19 @@
       @apply bg-secondary-foreground rounded-lg
     }
   }
+
+  /* Ensure body and html take up full height and width */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root, #__next {
+  height: 100%;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+/* Additional global styles if needed */
