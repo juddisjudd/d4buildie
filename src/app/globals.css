@@ -74,7 +74,7 @@
       @apply bg-background text-foreground;
     }
     ::-webkit-scrollbar {
-      @apply w-[2px]
+      @apply w-[0px]
     }
   
     ::-webkit-scrollbar-track {
