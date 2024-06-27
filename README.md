@@ -7,6 +7,7 @@ A <strong>Diablo IV</strong> Class "Builder" Desktop Application.<br>
 <img src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white"></img>
 <img src="https://img.shields.io/badge/shadcn/ui-000000.svg?style=for-the-badge&logo=shadcn/ui&logoColor=white"></img>
 <img src="https://img.shields.io/badge/Tauri-24C8D8.svg?style=for-the-badge&logo=Tauri&logoColor=white"></img>
+<img src="https://img.shields.io/badge/Bun-000000.svg?style=for-the-badge&logo=Bun&logoColor=white"</img>
 </p>
 <hr>
 
