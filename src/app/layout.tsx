@@ -1,31 +1,22 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "@/components/providers/theme-provider";
-import React from "react";
-import { Provider } from "jotai";
-import { cn } from "@/lib/utils";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/sonner";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { ThemeProvider } from '@/components/providers/theme-provider';
+import React from 'react';
+import { Provider } from 'jotai';
+import { cn } from '@/lib/utils';
+import { TooltipProvider } from '@/components/ui/tooltip';
+import { Toaster } from '@/components/ui/sonner';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, "bg-background flex flex-col h-full")}>
+      <body className={cn(inter.className, 'flex h-full flex-col bg-background')}>
         <Provider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
             <TooltipProvider disableHoverableContent delayDuration={0}>
               <Header />
               <main className="flex-grow pt-20">{children}</main>

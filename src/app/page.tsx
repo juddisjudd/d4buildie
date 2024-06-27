@@ -13,7 +13,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen">
+    <main className="flex min-h-screen flex-col items-center justify-center">
       <div className="flex items-center space-x-4">
         <Link href="/builder">
           <Button>

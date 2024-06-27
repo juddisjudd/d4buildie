@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -12,11 +11,7 @@ const ClientButton: React.FC = () => {
     router.push('/builder');
   };
 
-  return (
-    <Button onClick={handleBackClick}>
-      Back to Class Selection
-    </Button>
-  );
+  return <Button onClick={handleBackClick}>Back to Class Selection</Button>;
 };
 
 export default ClientButton;

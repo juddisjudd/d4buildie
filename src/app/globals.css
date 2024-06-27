@@ -86,7 +86,6 @@
     }
   }
 
-  /* Ensure body and html take up full height and width */
 html, body {
   height: 100%;
   margin: 0;
@@ -99,5 +98,3 @@ html, body {
 .flex-grow {
   flex-grow: 1;
 }
-
-/* Additional global styles if needed */

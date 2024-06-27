@@ -18,10 +18,10 @@ export default function Builder() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-4">
-      <h1 className="text-2xl font-bold mb-4">New Build</h1>
+    <main className="flex min-h-screen flex-col items-center justify-center p-4">
+      <h1 className="mb-4 text-2xl font-bold">New Build</h1>
       <ClassSelect onChange={(value) => setSelectedClass(value)} />
-      <Button onClick={handleCreateBuild} className="px-4 py-2 mt-4 font-bold">
+      <Button onClick={handleCreateBuild} className="mt-4 px-4 py-2 font-bold">
         Create Build
       </Button>
     </main>

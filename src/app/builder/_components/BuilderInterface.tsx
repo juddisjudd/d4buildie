@@ -6,7 +6,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectGroup, SelectI
 import { GearCombobox } from './GearCombobox';
 
 type GearSlotsType = {
-  [key: string]: { label: string, imageSrc: string }[];
+  [key: string]: { label: string; imageSrc: string }[];
 };
 
 const gearSlots: GearSlotsType = {
@@ -32,15 +32,15 @@ const gemSlots = [
   { label: 'Armor', imageSrc: '/images/icons/gear/gems.webp' },
   { label: 'Amulet', imageSrc: '/images/icons/gear/gems.webp' },
   { label: 'Ring 1', imageSrc: '/images/icons/gear/gems.webp' },
-  { label: 'Ring 2', imageSrc: '/images/icons/gear/gems.webp' }
+  { label: 'Ring 2', imageSrc: '/images/icons/gear/gems.webp' },
 ];
 
 const BuilderInterface = ({ selectedClass }: { selectedClass: string }) => {
   return (
-    <div className="w-full flex flex-col items-center justify-start px-4 py-2">
+    <div className="flex w-full flex-col items-center justify-start px-4 py-2">
       <div className="w-full bg-background">
         <Tabs defaultValue="gear-skills" className="w-full">
-          <TabsList className="w-full flex justify-center">
+          <TabsList className="flex w-full justify-center">
             <TabsTrigger value="gear-skills">Gear & Skills</TabsTrigger>
             <TabsTrigger value="skill-tree">Skill Tree</TabsTrigger>
             <TabsTrigger value="paragon">Paragon</TabsTrigger>
@@ -48,13 +48,13 @@ const BuilderInterface = ({ selectedClass }: { selectedClass: string }) => {
             <TabsTrigger value="showcase">Showcase</TabsTrigger>
           </TabsList>
           <TabsContent value="gear-skills">
-            <div className="flex justify-between w-full max-w-7xl mx-auto mt-4">
+            <div className="mx-auto mt-4 flex w-full max-w-7xl justify-between">
               <div className="flex flex-col space-y-2">
-                {gearSlots[selectedClass]?.slice(0, 7).map(({ label, imageSrc }) => (
-                  <GearCombobox key={label} selectedGear={label} imageSrc={imageSrc} />
-                ))}
+                {gearSlots[selectedClass]
+                  ?.slice(0, 7)
+                  .map(({ label, imageSrc }) => <GearCombobox key={label} selectedGear={label} imageSrc={imageSrc} />)}
               </div>
-              <div className="flex items-start justify-center mt-2">
+              <div className="mt-2 flex items-start justify-center">
                 <Select>
                   <SelectTrigger className="w-[240px]">
                     <SelectValue placeholder="Endgame" />
@@ -69,13 +69,13 @@ const BuilderInterface = ({ selectedClass }: { selectedClass: string }) => {
                 </Select>
               </div>
               <div className="flex flex-col space-y-2">
-                {gearSlots[selectedClass]?.slice(7).map(({ label, imageSrc }) => (
-                  <GearCombobox key={label} selectedGear={label} imageSrc={imageSrc} />
-                ))}
+                {gearSlots[selectedClass]
+                  ?.slice(7)
+                  .map(({ label, imageSrc }) => <GearCombobox key={label} selectedGear={label} imageSrc={imageSrc} />)}
               </div>
             </div>
-            <div className="mt-8 w-full max-w-7xl mx-auto">
-              <h2 className="text-lg font-bold mb-2 text-center">Gems</h2>
+            <div className="mx-auto mt-8 w-full max-w-7xl">
+              <h2 className="mb-2 text-center text-lg font-bold">Gems</h2>
               <div className="flex justify-center space-x-4">
                 {gemSlots.map(({ label, imageSrc }) => (
                   <GearCombobox key={label} selectedGear={label} imageSrc={imageSrc} isGemSlot />
@@ -83,18 +83,10 @@ const BuilderInterface = ({ selectedClass }: { selectedClass: string }) => {
               </div>
             </div>
           </TabsContent>
-          <TabsContent value="skill-tree">
-            {/* Skill tree content here, specific to the selected class */}
-          </TabsContent>
-          <TabsContent value="paragon">
-            {/* Paragon content here, specific to the selected class */}
-          </TabsContent>
-          <TabsContent value="notes">
-            {/* Notes content here */}
-          </TabsContent>
-          <TabsContent value="showcase">
-            {/* Showcase content here */}
-          </TabsContent>
+          <TabsContent value="skill-tree">{/* Skill tree content here, specific to the selected class */}</TabsContent>
+          <TabsContent value="paragon">{/* Paragon content here, specific to the selected class */}</TabsContent>
+          <TabsContent value="notes">{/* Notes content here */}</TabsContent>
+          <TabsContent value="showcase">{/* Showcase content here */}</TabsContent>
         </Tabs>
       </div>
     </div>
