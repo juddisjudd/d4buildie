@@ -4,36 +4,8 @@ import React from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectGroup, SelectItem } from '@/components/ui/select';
 import { GearCombobox } from './GearCombobox';
-
-type GearSlotsType = {
-  [key: string]: { label: string; imageSrc: string }[];
-};
-
-const gearSlots: GearSlotsType = {
-  barbarian: [
-    { label: 'Helm', imageSrc: '/images/icons/gear/helm.webp' },
-    { label: 'Chest Armor', imageSrc: '/images/icons/gear/chest_armor.webp' },
-    { label: 'Gloves', imageSrc: '/images/icons/gear/gloves.webp' },
-    { label: 'Pants', imageSrc: '/images/icons/gear/pants.webp' },
-    { label: 'Boots', imageSrc: '/images/icons/gear/boots.webp' },
-    { label: 'Bludgeoning Weapon', imageSrc: '/images/icons/gear/bludgeoning_weapon.webp' },
-    { label: 'Dual-Wield Weapon 1', imageSrc: '/images/icons/gear/dual_wield_weapon_1.webp' },
-    { label: 'Dual-Wield Weapon 2', imageSrc: '/images/icons/gear/dual_wield_weapon_2.webp' },
-    { label: 'Amulet', imageSrc: '/images/icons/gear/amulet.webp' },
-    { label: 'Ring 1', imageSrc: '/images/icons/gear/ring_1.webp' },
-    { label: 'Ring 2', imageSrc: '/images/icons/gear/ring_2.webp' },
-    { label: 'Slashing Weapon', imageSrc: '/images/icons/gear/slashing_weapon.webp' },
-  ],
-  // Add other class configurations here
-};
-
-const gemSlots = [
-  { label: 'Weapon', imageSrc: '/images/icons/gear/gems.webp' },
-  { label: 'Armor', imageSrc: '/images/icons/gear/gems.webp' },
-  { label: 'Amulet', imageSrc: '/images/icons/gear/gems.webp' },
-  { label: 'Ring 1', imageSrc: '/images/icons/gear/gems.webp' },
-  { label: 'Ring 2', imageSrc: '/images/icons/gear/gems.webp' },
-];
+import { GearStats } from './gearStats';
+import { gearSlots, gemSlots } from './gearSlots';
 
 const BuilderInterface = ({ selectedClass }: { selectedClass: string }) => {
   return (
@@ -81,6 +53,10 @@ const BuilderInterface = ({ selectedClass }: { selectedClass: string }) => {
                   <GearCombobox key={label} selectedGear={label} imageSrc={imageSrc} isGemSlot />
                 ))}
               </div>
+            </div>
+            <div className="mx-auto mt-8 w-full max-w-7xl">
+              <h2 className="mb-2 text-center text-lg font-bold">Gear Stats</h2>
+              <GearStats selectedClass={selectedClass} />
             </div>
           </TabsContent>
           <TabsContent value="skill-tree">{/* Skill tree content here, specific to the selected class */}</TabsContent>
