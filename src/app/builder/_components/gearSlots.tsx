@@ -47,7 +47,7 @@ export const gearSlots: GearSlotsType = {
     { label: 'Gloves', imageSrc: '/images/icons/gear/gloves.webp' },
     { label: 'Pants', imageSrc: '/images/icons/gear/pants.webp' },
     { label: 'Boots', imageSrc: '/images/icons/gear/boots.webp' },
-    { label: 'Weapon', imageSrc: '/images/icons/gear/weapon.webp' },
+    { label: 'Ranged Weapon', imageSrc: '/images/icons/gear/ranged_weapon.webp' },
     { label: 'Dual-Wield Weapon 1', imageSrc: '/images/icons/gear/dual_wield_weapon_1.webp' },
     { label: 'Dual-Wield Weapon 2', imageSrc: '/images/icons/gear/dual_wield_weapon_2.webp' },
     { label: 'Amulet', imageSrc: '/images/icons/gear/amulet.webp' },

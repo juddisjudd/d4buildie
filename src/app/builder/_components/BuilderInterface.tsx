@@ -4,8 +4,8 @@ import React from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectGroup, SelectItem } from '@/components/ui/select';
 import { GearCombobox } from './GearCombobox';
-import { GearStats } from './gearStats';
 import { gearSlots, gemSlots } from './gearSlots';
+import { GearStats } from './gearStats';
 
 const BuilderInterface = ({ selectedClass }: { selectedClass: string }) => {
   return (
