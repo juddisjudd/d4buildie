@@ -21,13 +21,14 @@ interface GearComboboxProps {
   selectedGear: string;
   imageSrc: string;
   isGemSlot?: boolean;
+  isRightSide?: boolean; // New prop to determine if the slot is on the right side
 }
 
 const isJewelrySlot = (slot: string) => {
   return slot === 'Amulet' || slot === 'Ring 1' || slot === 'Ring 2';
 };
 
-export const GearCombobox: React.FC<GearComboboxProps> = ({ selectedGear, imageSrc, isGemSlot = false }) => {
+export const GearCombobox: React.FC<GearComboboxProps> = ({ selectedGear, imageSrc, isGemSlot = false, isRightSide = false }) => {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState('');
   const [selectedImage, setSelectedImage] = React.useState(imageSrc);
@@ -45,6 +46,12 @@ export const GearCombobox: React.FC<GearComboboxProps> = ({ selectedGear, imageS
 
   return (
     <div className="flex items-center space-x-2">
+      {isRightSide && (
+        <div className="flex flex-col items-start">
+          <span>{selectedGear}</span>
+          <span className="text-sm text-muted-foreground">{value || 'Empty'}</span>
+        </div>
+      )}
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
@@ -151,10 +158,12 @@ export const GearCombobox: React.FC<GearComboboxProps> = ({ selectedGear, imageS
           </Command>
         </PopoverContent>
       </Popover>
-      <div className="flex flex-col items-start">
-        <span>{selectedGear}</span>
-        <span className="text-sm text-muted-foreground">{value || 'Empty'}</span>
-      </div>
+      {!isRightSide && (
+        <div className="flex flex-col items-start">
+          <span>{selectedGear}</span>
+          <span className="text-sm text-muted-foreground">{value || 'Empty'}</span>
+        </div>
+      )}
     </div>
   );
 };
