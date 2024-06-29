@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.judd.d4buildie",
+      "identifier": "io.github.juddisjudd.d4buildie",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
