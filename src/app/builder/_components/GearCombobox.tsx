@@ -21,7 +21,7 @@ interface GearComboboxProps {
   selectedGear: string;
   imageSrc: string;
   isGemSlot?: boolean;
-  isRightSide?: boolean; // New prop to determine if the slot is on the right side
+  isRightSide?: boolean;
 }
 
 const isJewelrySlot = (slot: string) => {

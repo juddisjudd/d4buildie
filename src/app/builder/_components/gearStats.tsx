@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectGroup, SelectItem } from '@/components/ui/select';
 import gearStats from '../../../data/gearStats.json'; // Adjust the path as needed
 import { weaponTypes } from './weaponTypes'; // Import the weapon types
+import { StatsCombobox } from './StatsCombobox'; // Import the StatsCombobox component
 
 type GearStatsCardProps = {
   title: string;
@@ -48,7 +48,9 @@ const GearStatsCard: React.FC<GearStatsCardProps> = ({
   const weaponTypeOptions =
     (weaponTypes as WeaponTypesData)[title]?.filter((wt) => wt.classes.includes(selectedClass)) || [];
 
-  const [selectedStats, setSelectedStats] = useState<string[]>([]);
+  const [selectedStats, setSelectedStats] = useState<string[]>(Array(slots + temperingSlots).fill(''));
+  const [selectedWeaponType, setSelectedWeaponType] = useState<string>('');
+  const [selectedImplicitStat, setSelectedImplicitStat] = useState<string>('');
 
   const handleSelect = (stat: string, index: number) => {
     const newSelectedStats = [...selectedStats];
@@ -63,72 +65,38 @@ const GearStatsCard: React.FC<GearStatsCardProps> = ({
       </CardHeader>
       <CardContent className="space-y-2">
         {hasWeaponType && weaponTypeOptions.length > 0 && (
-          <Select>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Weapon Type" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                {weaponTypeOptions.map((wt, index) => (
-                  <SelectItem key={index} value={wt.type}>
-                    {wt.type}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+          <StatsCombobox
+            options={weaponTypeOptions.map((wt) => wt.type)}
+            placeholder="Weapon Type"
+            onSelect={setSelectedWeaponType}
+            selectedValue={selectedWeaponType}
+          />
         )}
         {hasImplicitStat && (
-          <Select>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Implicit Stat" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                {implicitStats.map((stat, index) => (
-                  <SelectItem key={index} value={stat}>
-                    {stat}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+          <StatsCombobox
+            options={implicitStats}
+            placeholder="Implicit Stat"
+            onSelect={setSelectedImplicitStat}
+            selectedValue={selectedImplicitStat}
+          />
         )}
         {Array.from({ length: slots }, (_, i) => (
-          <Select key={`${title}-slot-${i + 1}`}>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder={`Stat ${i + 1}`} />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                {combinedStats
-                  .filter((stat) => !selectedStats.includes(stat))
-                  .map((stat, index) => (
-                    <SelectItem key={index} value={stat} onSelect={() => handleSelect(stat, i)}>
-                      {stat}
-                    </SelectItem>
-                  ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+          <StatsCombobox
+            key={`${title}-slot-${i + 1}`}
+            options={combinedStats.filter((stat) => !selectedStats.includes(stat))}
+            placeholder={`Stat ${i + 1}`}
+            onSelect={(stat) => handleSelect(stat, i)}
+            selectedValue={selectedStats[i]}
+          />
         ))}
         {Array.from({ length: temperingSlots }, (_, i) => (
-          <Select key={`${title}-tempering-${i + 1}`}>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder={`Tempering Stat ${i + 1}`} />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                {combinedStats
-                  .filter((stat) => !selectedStats.includes(stat))
-                  .map((stat, index) => (
-                    <SelectItem key={index} value={stat} onSelect={() => handleSelect(stat, i + slots)}>
-                      {stat}
-                    </SelectItem>
-                  ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+          <StatsCombobox
+            key={`${title}-tempering-${i + 1}`}
+            options={combinedStats.filter((stat) => !selectedStats.includes(stat))}
+            placeholder={`Tempering Stat ${i + 1}`}
+            onSelect={(stat) => handleSelect(stat, i + slots)}
+            selectedValue={selectedStats[i + slots]}
+          />
         ))}
       </CardContent>
     </Card>

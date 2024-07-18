@@ -104,10 +104,10 @@ const BuilderInterface = ({ selectedClass }: { selectedClass: string }) => {
               <GearStats selectedClass={selectedClass} />
             </div>
           </TabsContent>
-          <TabsContent value="skill-tree">{/* Skill tree content here, specific to the selected class */}</TabsContent>
-          <TabsContent value="paragon">{/* Paragon content here, specific to the selected class */}</TabsContent>
+          <TabsContent value="skill-tree">{/* Skill tree content here */}</TabsContent>
+          <TabsContent value="paragon">{/* Paragon content here */}</TabsContent>
           <TabsContent value="notes">{/* Notes content here */}</TabsContent>
-          <TabsContent value="showcase">{/* Showcase content here */}</TabsContent>
+          <TabsContent value="showcase">{/* Showcase content here (youtube link or something) */}</TabsContent>
         </Tabs>
       </div>
     </div>
