@@ -12,7 +12,9 @@ const ClassBuilderPage = ({ params }: { params: { class: string } }) => {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-4">
-      <h1 className="mb-4 text-2xl font-bold">{className} Builder</h1>
+      <h1 className="mb-4 text-2xl font-bold">
+        <span className="uppercase">{className} Builder</span>
+      </h1>
       <BuilderInterface selectedClass={className} />
     </main>
   );

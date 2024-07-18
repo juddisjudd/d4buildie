@@ -76,7 +76,6 @@ export const gearSlots: GearSlotsType = {
     { label: 'Amulet', imageSrc: '/images/icons/gear/amulet.webp' },
     { label: 'Ring 1', imageSrc: '/images/icons/gear/ring_1.webp' },
     { label: 'Ring 2', imageSrc: '/images/icons/gear/ring_2.webp' },
-    { label: 'Offhand', imageSrc: '/images/icons/gear/offhand.webp' },
   ],
 };
 

@@ -10,6 +10,9 @@ export const weaponTypes = {
     { type: 'Wand: 10% Lucky Hit Chance', classes: ['Necromancer', 'Sorcerer'] },
     { type: '2h Sword: 30% Critical Strike Damage', classes: ['Necromancer'] },
     { type: 'Dagger: 16.7% Damage to Close Enemies', classes: ['Sorcerer'] },
+    { type: 'Polearm: 64% Vulnerable Damage', classes: ['Spiritborn'] },
+    { type: 'Glaive: 32% Damage To Elites', classes: ['Spiritborn'] },
+    { type: 'Quarterstaff: 40% Block Chance', classes: ['Spiritborn'] },
   ],
   'Bludgeoning Weapon': [{ type: '2h Mace: 105% Overpower Damage', classes: ['Barbarian'] }],
   'Dual-Wield Weapon 1': [
